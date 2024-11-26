@@ -4,7 +4,7 @@ from ratings.restaurants.controller import recommend_restaurant_user_new, recomm
 bp = Blueprint("ratings_restaurants_route", __name__)
 
 
-@bp.route("/ratings/restaurants", methods=["GET"])
+@bp.route("/recommendation/restaurants", methods=["GET"])
 def recommend_new_user():
     top_n = request.args.get('top', 5)
     city = request.args.get('city')
@@ -18,7 +18,7 @@ def recommend_new_user():
     return recommend_restaurant_user_new(top_n=int(top_n), city=city)
 
 
-@bp.route("/ratings/restaurants/id", methods=["GET"])
+@bp.route("/recommendation/restaurants/id", methods=["GET"])
 def recommend_existing_user():
     user_id = request.args.get('user')
     top_n = request.args.get('top', 5)
@@ -39,7 +39,7 @@ def recommend_existing_user():
     return recommend_restaurant_existing_user(user_id=user_id, top_n=top_n, city=city)
 
 
-@bp.route("/ratings/restaurants/id/history", methods=["GET"])
+@bp.route("/recommendation/restaurants/id/history", methods=["GET"])
 def recommend_combined():
     user_id = request.args.get('user')
     top_n = request.args.get('top', 5)

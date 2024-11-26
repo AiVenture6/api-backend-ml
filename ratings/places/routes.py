@@ -4,7 +4,7 @@ from ratings.places.controller import recommend_new_user, recommend_existing_use
 bp = Blueprint("ratings_places_routes", __name__)
 
 
-@bp.route("/ratings/places", methods=["GET"])
+@bp.route("/recommendation/destinations", methods=["GET"])
 def new_user_recommendations():
     kategori = request.args.get("category")
     lokasi = request.args.get("location")
@@ -19,7 +19,7 @@ def new_user_recommendations():
     return recommend_new_user(kategori, lokasi, top_n)
 
 
-@bp.route("/ratings/places/id", methods=["GET"])
+@bp.route("/recommendation/destination/id", methods=["GET"])
 def existing_user_recommendations():
     user_id = request.args.get("user")
     if not user_id:

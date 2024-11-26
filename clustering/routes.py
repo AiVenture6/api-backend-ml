@@ -3,7 +3,8 @@ from clustering.controller import recommend_image
 
 bp = Blueprint('clustering_routes', __name__)
 
-@bp.route("/clustering", methods=["GET"])
+
+@bp.route("/recommendation/images", methods=["GET"])
 def recommended_image_route():
     input_image = request.args.get("local")
     if not input_image:
