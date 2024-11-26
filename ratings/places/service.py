@@ -22,6 +22,7 @@ def rekomendasi_pengguna_baru(kategori, lokasi=None, top_n=5):
     )
     return rekomendasi
 
+
 def rekomendasi_pengguna_lama(user_id, top_n=5):
     """
     Memberikan rekomendasi untuk pengguna lama berdasarkan model SVD yang telah dilatih dan interaksi pengguna lain yang serupa.
@@ -47,4 +48,3 @@ def rekomendasi_pengguna_lama(user_id, top_n=5):
     rekomendasi_df = rekomendasi_df.merge(df_tourism_with_id[['Place_Id', 'Place_Name', 'Category']], on='Place_Id')
 
     return rekomendasi_df[['Place_Id', 'Place_Name', 'Category', 'Predicted_Rating']]
-

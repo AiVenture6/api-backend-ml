@@ -1,12 +1,16 @@
 from flask import Flask
 from clustering import routes as cluster_route
 from ratings.places import routes as places_route
+from ratings.hotels import routes as hotels_route
+from ratings.restaurants import routes as restaurants_route
 
 
 app = Flask(__name__)
 
 app.register_blueprint(cluster_route.bp)
 app.register_blueprint(places_route.bp)
+app.register_blueprint(hotels_route.bp)
+app.register_blueprint(restaurants_route.bp)
 
 
 @app.route("/")
