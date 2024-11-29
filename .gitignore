@@ -39,3 +39,6 @@ desktop.ini
 # Byte-compiled and compiled files
 *.pyc
 *.pyo
+
+Dockerfile
+.dockerignore
