@@ -1,4 +1,4 @@
-FROM python:3.12
+FROM python:3.12.2
 
 ENV PYTHONUNBUFFERED True
 
@@ -8,4 +8,4 @@ COPY . ./
 
 RUN pip install -r requirements.txt
 
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
+CMD ["gunicorn", "-b", "0.0.0.0:5000", "main:app"]

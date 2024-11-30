@@ -1,6 +1,5 @@
 .git
 .idea
 __pycache__
-model
 .gitignore
 pict
